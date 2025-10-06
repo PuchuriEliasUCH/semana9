@@ -22,16 +22,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="peli :${pelicuas}">
+        <tr th:each="peli : ${peliculas}">
             <td th:text="${peli.id_pelicula}"></td>
             <td th:text="${peli.nombre}"></td>
-            <td th:text="${est.director}"></td>
-            <td th:text="${est.genero}"></td>
-            <td th:text="${est.duracion}"></td>
-            <td th:text="${est.anio}"></td>
-            <td th:text="${est.calificacion}"></td>
-
+            <td th:text="${peli.director}"></td>
+            <td th:text="${peli.genero}"></td>
+            <td th:text="${peli.duracion}"></td>
+            <td th:text="${peli.anio}"></td>
+            <td th:text="${peli.calificacion}"></td>
         </tr>
+            <td>
+                <a th:href="@{/editar/} "+" ${peli.id_pelicula}" class="btn btn-success">Editar</a>
+                <a th:href="@{/borrar/} + ${peli.id_pelicula}" class="btn btn-danger">Borrar</a>
+            </td>
         </tbody>
     </table>
 </div>

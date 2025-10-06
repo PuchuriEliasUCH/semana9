@@ -39,14 +39,14 @@ public class PeliculaController {
 
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable int id, Model modelo) {
-        Optional<Pelicula>lista = servicio.buscar(id);
-        modelo.addAttribute("pelicula", lista);
+        Pelicula pelicula = servicio.buscar(id).orElse(null);
+        modelo.addAttribute("peliculas", pelicula);
         return "registro";
     }
 
     @GetMapping("/borrar/{id}")
-    public String editar(@PathVariable int id){
-        servicio.listar();
+    public String borrar(@PathVariable int id) {
+        servicio.eliminar(id);
         return "redirect:/";
     }
 }
