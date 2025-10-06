@@ -31,11 +31,12 @@
             <td th:text="${peli.duracion}"></td>
             <td th:text="${peli.anio}"></td>
             <td th:text="${peli.calificacion}"></td>
-            <a th:href="@{/editar/} + ${peli.id_pelicula}" class="btn btn-success">Editar</a>
-            <a th:href="@{/borrar/} + ${peli.id_pelicula}" class="btn btn-danger">Borrar</a>
-
+            <td>
+                <a th:href="@{/editar/{id}(id=${peli.id_pelicula})}" class="btn btn-success">Editar</a>
+                <a th:href="@{/borrar/{id}(id=${peli.id_pelicula})}" class="btn btn-danger">Borrar</a>
+            </td>
         </tr>
-
+            
         </tbody>
     </table>
 </div>
