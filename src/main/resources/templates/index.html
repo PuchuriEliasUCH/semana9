@@ -19,6 +19,7 @@
             <th>Duración</th>
             <th>Año</th>
             <th>Calificación</th>
+            <th>Opciones</th>
         </tr>
         </thead>
         <tbody>
@@ -30,11 +31,11 @@
             <td th:text="${peli.duracion}"></td>
             <td th:text="${peli.anio}"></td>
             <td th:text="${peli.calificacion}"></td>
+            <a th:href="@{/editar/} + ${peli.id_pelicula}" class="btn btn-success">Editar</a>
+            <a th:href="@{/borrar/} + ${peli.id_pelicula}" class="btn btn-danger">Borrar</a>
+
         </tr>
-            <td>
-                <a th:href="@{/editar/} "+" ${peli.id_pelicula}" class="btn btn-success">Editar</a>
-                <a th:href="@{/borrar/} + ${peli.id_pelicula}" class="btn btn-danger">Borrar</a>
-            </td>
+
         </tbody>
     </table>
 </div>
